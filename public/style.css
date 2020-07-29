@@ -1,0 +1,120 @@
+:root {
+    --speed: 1;
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.machine {
+    background-color: peru;
+    border: dashed black 3px;
+    height: 300px;
+    width: 900px;
+    margin: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    
+}
+.slot{
+    height: 225px;
+    width: 225px;
+    /*margin: 20px;*/
+    overflow: hidden;
+    background-color: blanchedalmond;
+    border: solid darkblue 2px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 5em;
+    border-radius: 20px;
+    transform: rotateY(720deg);
+    transition: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+.value.trans{
+    
+    animation-name: slotspin;
+    animation-iteration-count: infinite;
+    animation-duration: calc(1s/var(--speed));
+   
+}
+.value.end{
+    animation-name: stopanim;
+    animation-iteration-count: 1;
+    transition: 2s;
+}
+
+.inp{
+    height: 100px;
+    width: 900px;
+    /*margin: 50px;*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#inpS {
+    font-size: 30pt;
+    width: 200px;
+    margin-left: 50px;
+}
+#btn1 {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    background-color: darkred;
+    font-size: 18pt;
+    font-family: fantasy;
+    color: whitesmoke;
+    box-shadow: gray 10px 10px 10px;
+}
+#btn2 {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    background-color: darkred;
+    font-size: 18pt;
+    font-family: fantasy;
+    color: whitesmoke;
+    box-shadow: gray 10px 10px 10px;
+}
+
+
+.text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+#btn1:active{
+    transform: translate(5px,5px);
+    box-shadow: gray 5px 5px 5px;
+}
+#btn2:active{
+    transform: translate(5px,5px);
+    box-shadow: gray 5px 5px 5px;
+}
+
+
+
+@keyframes slotspin {
+    0% {
+        transform: translateY(-180px);
+    }
+    100% {
+        transform: translateY(180px);
+    }
+}
+
+@keyframes stopanim{
+    0%{
+        transform: translateY(-180px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
